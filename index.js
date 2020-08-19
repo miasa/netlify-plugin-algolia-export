@@ -32,9 +32,9 @@ module.exports = {
     } = opts
 
     // Check environment variables have been set
-    if (algoliaAppId === null ||
-      algoliaAdminKey === null ||
-      algoliaIndex === null) {
+    if (typeof algoliaAppId === 'undefined' ||
+      typeof algoliaAdminKey === 'undefined' ||
+      typeof algoliaIndex === 'undefined') {
       build.failPlugin(
         'Please set your ALGOLIA_APPLICATION_ID, ALGOLIA_ADMIN_KEY, and ALGOLIA_INDEX using environment variables: https://docs.netlify.com/configure-builds/environment-variables'
       )
