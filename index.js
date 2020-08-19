@@ -75,7 +75,7 @@ module.exports = {
 }
 
 async function walk(dir, exclude = []) {
-  return (await globby(path.join(dir, '**/*.html')))
+  return (await globby(path.posix.join(dir, '**/*.html')))
     .filter(p =>
       exclude
       .find(r => p.replace(dir, '').match(r)) === undefined
